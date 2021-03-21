@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('title')Show Page @endsection
 
 @section('content')
@@ -9,9 +10,9 @@
     </div>
     <div class="card-body">
       <h5 class="card-title">Title:</h5>
-      <p class="card-text">{{ $post['title'] }}</p>
+      <p class="card-text">{{ $post->title }}</p>
       <h5 class="card-title">Description:</h5>
-      <p class="card-text">{{ $post['description'] }}</p>
+      <p class="card-text">{{ $post->description }}</p>
     </div>
 </div>
 </br>
@@ -20,10 +21,10 @@
       Post creator info 
     </div>
     <div class="card-body">
-         <h5 > Name:-  {{ $post['posted_by'] }} </h5> 
+         <h5 > Name:-  {{  $post->user->name }} </h5> 
      
-      <h5 >Email : {{ $post['email'] }} </h5>
-      <h5 >Created at  : {{ $post['created_at'] }} </h5>
+      <h5 >Email : {{ $post->user->email }} </h5>
+      <h5 >Created at  : {{ $post->user->created_at }} </h5>
      
     </div>
 </div>

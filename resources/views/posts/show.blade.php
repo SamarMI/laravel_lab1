@@ -24,7 +24,8 @@
          <h5 > Name:-  {{  $post->user->name }} </h5> 
      
       <h5 >Email : {{ $post->user->email }} </h5>
-      <h5 >Created at  : {{ $post->user->created_at }} </h5>
+      <!--  <h5 >Created at  : {{ $post->user->created_at }} </h5> -->
+      <h5 >Created at  : {{Carbon\Carbon::parse($post->created_at)->Format('Do d \of M Y, h:m:s a')}} </h5>
      
     </div>
 </div>

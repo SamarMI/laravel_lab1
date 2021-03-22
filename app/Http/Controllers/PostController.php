@@ -13,12 +13,15 @@ class PostController extends Controller
     public function index()
     {$allPosts = Post::all(); //object of eloquent collection
 
+        $Posts = Post ::paginate(4);
+        return view('posts.index', [
+            'posts' => $Posts,
+        ]);
+        /*
         return view('posts.index', [
             'posts' => $allPosts
-        ]);
-        return view('posts.index', [
-            'posts' => $allPosts
-        ]);
+        ]);*/
+        
     }
     
     public function show($postId)

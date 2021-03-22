@@ -10,6 +10,8 @@ use App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
+
 
 
 
@@ -117,7 +119,7 @@ class PostController extends Controller
 
     }*/
 
-    public function update( Request $request ,$postId ) 
+    public function update( UpdatePostRequest $request ,$postId ) 
     {
         
         $post = Post::find($postId); //object of Post model     

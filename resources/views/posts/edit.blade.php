@@ -3,6 +3,15 @@
 @section('title')Create Page @endsection
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <form method="POST" action="{{route('posts.update',['post' => $post->id])}}">
     @csrf
     <div class="form-group">
@@ -18,7 +27,7 @@
       <select name="user_id" class="form-control" id="post_creator" >
       <option selected >{{$post->user->name}}</option>
         @foreach ($users as $user)
-              <option value="{{$user->id}}">{{$user->name}}</option>  
+              <option value="{{$user->id}}">{{$user->id}}</option>  
         @endforeach
       </select>
     </div>

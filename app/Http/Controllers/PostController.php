@@ -115,6 +115,14 @@ class PostController extends Controller
 
 
     }
+    public function destory($postId)
+    {
+
+        Post::find($postId)->delete();
+        return redirect()->route('posts.index');
+
+    }
+
 
 
 }

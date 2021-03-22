@@ -13,6 +13,9 @@ class Post extends Model
         'description',
         'user_id',
     ];
+ 
+        
+   
 
     public function user() //foreign key user_id
     {

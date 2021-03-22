@@ -25,7 +25,11 @@
         <td>
           <a href="{{ route('posts.show',['post' => $post->id] )}}" class="btn btn-info" style="margin-bottom: 20px;">View</a>
           <a href="{{ route('posts.edit',['post' => $post->id] )}}" class="btn btn-info" style="margin-bottom: 20px;">Edit</a>
-          <button type="button" class="btn btn-danger" style="margin-bottom: 20px;">Delete</button>
+          <!--<button type="button" class="btn btn-danger" style="margin-bottom: 20px;">Delete</button>  -->
+          <form method="POST" action="{{ route('posts.destory',['post' => $post['id']])}}" style="display:inline;margin:0px;padding:0px">
+          @csrf @method('DELETE')
+          <button class="btn btn-danger" style="margin-bottom:20px;" onclick="return confirm('Are you sure you want to delete ?')">Delete</button>
+        </form>
         </td>
       </tr>
     @endforeach

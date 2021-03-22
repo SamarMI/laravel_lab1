@@ -6,6 +6,13 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Http\Requests;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use App\Http\Requests\StorePostRequest;
+
+
+
 
 
 
@@ -49,13 +56,15 @@ class PostController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         // $requestData = request()->all();
         
         //another syntax
         // $title = request()->title;
         // $description = request()->description;
+        //$validated = $request->validated();
+
 
         $requestData = $request->all();
         //dd($requestData);

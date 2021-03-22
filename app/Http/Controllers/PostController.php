@@ -119,7 +119,7 @@ class PostController extends Controller
 
     }*/
 
-    public function update( UpdatePostRequest $request ,$postId ) 
+    public function update( UpdatePostRequests $request ,$postId ) 
     {
         
         $post = Post::find($postId); //object of Post model     

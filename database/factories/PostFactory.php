@@ -28,7 +28,7 @@ class PostFactory extends Factory
 
             'title' => Str::random(10),
             'description' => Str::random(30),
-            'user_id' => mt_rand(10000,99999),
+            'user_id' => mt_rand(1,200),
         ];
     }
 }
